@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-09T15:24:28.393Z",
+    "end": "2026-11-09T15:24:29.669Z",
+    "duration": 1276,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "960a008c-6346-4dac-bc2f-a8877782ba31",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginEnv.cy.js",
+      "file": "cypress\\e2e\\loginEnv.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e4087ec6-7195-4416-b83d-522edcc20e72",
+          "title": "authentification sauce Demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with valid credentials",
+              "fullTitle": "authentification sauce Demo login with valid credentials",
+              "timedOut": null,
+              "duration": 708,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click();\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "89b27693-f7f5-4756-bf89-af215728147f",
+              "parentUUID": "e4087ec6-7195-4416-b83d-522edcc20e72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login with invalid credentials",
+              "fullTitle": "authentification sauce Demo login with invalid credentials",
+              "timedOut": null,
+              "duration": 468,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').type('invalid_user');\ncy.get('#password').type('invalid_password');\ncy.get('#login-button').click();\n//cy.get('[data-test=\"error\"]').should('be.visible');\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain', 'Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "446343e7-e60f-4ea6-8f89-e9e1f579d264",
+              "parentUUID": "e4087ec6-7195-4416-b83d-522edcc20e72",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "89b27693-f7f5-4756-bf89-af215728147f",
+            "446343e7-e60f-4ea6-8f89-e9e1f579d264"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1176,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

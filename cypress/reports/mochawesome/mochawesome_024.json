@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-09T15:24:34.812Z",
+    "end": "2026-11-09T15:24:42.765Z",
+    "duration": 7953,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0b3d4d1e-cc5a-4358-9171-c4b7ce959d49",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginPapaparse.cy.js",
+      "file": "cypress\\e2e\\loginPapaparse.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eb51655e-8e29-46a9-ad7a-c49f35063dc4",
+          "title": "login sauce demo with CSV",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with CSV data",
+              "fullTitle": "login sauce demo with CSV login with CSV data",
+              "timedOut": null,
+              "duration": 7784,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile('cypress/fixtures/jdd.csv').then(csvData => {\n  // Lire et convertir le CSV en tableau d'objets JavaScript\n  const users = _papaparse.default.parse(csvData, {\n    header: true\n  }).data;\n  users.forEach(user => {\n    cy.visit('https://www.saucedemo.com/');\n    cy.get('#user-name').type(user.username);\n    cy.get('#password').type(user.password);\n    cy.get('#login-button').click();\n    if (user.result === \"success\") {\n      cy.url().should('include', '/inventory.html');\n    } else {\n      cy.get('[data-test=\"error\"]').should('be.visible');\n    }\n  });\n});",
+              "err": {},
+              "uuid": "d8c34265-64f2-4218-934c-10bcbbe6b892",
+              "parentUUID": "eb51655e-8e29-46a9-ad7a-c49f35063dc4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d8c34265-64f2-4218-934c-10bcbbe6b892"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7784,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

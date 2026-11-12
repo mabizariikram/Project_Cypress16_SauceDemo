@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "@cypress/grep": "^7.0.0",
+    "allure-commandline": "^2.46.1",
+    "allure-cypress": "^3.14.0",
+    "csvtojson": "^2.0.14",
+    "cypress": "^16.2.1",
+    "mochawesome": "^8.1.1",
+    "mochawesome-merge": "^5.1.1"
+  },
+  "dependencies": {
+    "papaparse": "^5.7.0"
+  },
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "report:merge": "mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/report.json",
+    "report:generate": "marge cypress/reports/report.json -f report -o cypress/reports"
+  }
+}

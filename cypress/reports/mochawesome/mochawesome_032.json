@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-12T08:53:57.765Z",
+    "end": "2026-11-12T08:54:00.622Z",
+    "duration": 2857,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "431b37fa-83a2-4963-84a7-8a332c8e5299",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginpom.cy.js",
+      "file": "cypress\\e2e\\loginpom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8da52e10-e977-49de-9573-a1c22317f0ae",
+          "title": "authentification avec POM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with valid credentials",
+              "fullTitle": "authentification avec POM login with valid credentials",
+              "timedOut": null,
+              "duration": 1848,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.saisirUsername(\"standard_user\");\n_loginPage.default.saisirPassword(\"secret_sauce\");\n_loginPage.default.se_connecter();\ncy.url().should(\"include\", '/inventory');",
+              "err": {},
+              "uuid": "c235fca0-6205-49ab-8450-2930f9539edd",
+              "parentUUID": "8da52e10-e977-49de-9573-a1c22317f0ae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login with wrong credentials",
+              "fullTitle": "authentification avec POM login with wrong credentials",
+              "timedOut": null,
+              "duration": 850,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.saisirUsername(\"wrong_user\");\n_loginPage.default.saisirPassword(\"wrong_user\");\n_loginPage.default.se_connecter();\n_loginPage.default.getErrorMsg().should(\"be.visible\");\ncy.screenshot(\"login_error\"); // capture d'écran en cas d'erreur",
+              "err": {},
+              "uuid": "eda05bcb-f3d6-4ed9-a454-5caed664e763",
+              "parentUUID": "8da52e10-e977-49de-9573-a1c22317f0ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c235fca0-6205-49ab-8450-2930f9539edd",
+            "eda05bcb-f3d6-4ed9-a454-5caed664e763"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2698,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
